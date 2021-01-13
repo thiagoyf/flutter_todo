@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'home_controller.dart';
+part of 'todo_controller.dart';
 
 // **************************************************************************
 // InjectionGenerator
 // **************************************************************************
 
-final $HomeController = BindInject(
-  (i) => HomeController(),
+final $TodoController = BindInject(
+  (i) => TodoController(i<ITodoRepository>()),
   singleton: true,
   lazy: true,
 );
@@ -18,33 +18,33 @@ final $HomeController = BindInject(
 
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
-mixin _$HomeController on _HomeControllerBase, Store {
-  final _$todosAtom = Atom(name: '_HomeControllerBase.todos');
+mixin _$TodoController on _TodoControllerBase, Store {
+  final _$todosAtom = Atom(name: '_TodoControllerBase.todos');
 
   @override
-  ObservableList<String> get todos {
+  ObservableStream<List<TodoModel>> get todos {
     _$todosAtom.reportRead();
     return super.todos;
   }
 
   @override
-  set todos(ObservableList<String> value) {
+  set todos(ObservableStream<List<TodoModel>> value) {
     _$todosAtom.reportWrite(value, super.todos, () {
       super.todos = value;
     });
   }
 
-  final _$_HomeControllerBaseActionController =
-      ActionController(name: '_HomeControllerBase');
+  final _$_TodoControllerBaseActionController =
+      ActionController(name: '_TodoControllerBase');
 
   @override
-  void addTodo(String todo) {
-    final _$actionInfo = _$_HomeControllerBaseActionController.startAction(
-        name: '_HomeControllerBase.addTodo');
+  dynamic fetchAll() {
+    final _$actionInfo = _$_TodoControllerBaseActionController.startAction(
+        name: '_TodoControllerBase.getAllTodos');
     try {
-      return super.addTodo(todo);
+      return super.fetchAll();
     } finally {
-      _$_HomeControllerBaseActionController.endAction(_$actionInfo);
+      _$_TodoControllerBaseActionController.endAction(_$actionInfo);
     }
   }
 
