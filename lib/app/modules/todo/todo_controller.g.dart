@@ -40,9 +40,31 @@ mixin _$TodoController on _TodoControllerBase, Store {
   @override
   dynamic fetchAll() {
     final _$actionInfo = _$_TodoControllerBaseActionController.startAction(
-        name: '_TodoControllerBase.getAllTodos');
+        name: '_TodoControllerBase.fetchAll');
     try {
       return super.fetchAll();
+    } finally {
+      _$_TodoControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic todoCompletedValue(TodoModel todo, bool completed) {
+    final _$actionInfo = _$_TodoControllerBaseActionController.startAction(
+        name: '_TodoControllerBase.todoCompletedValue');
+    try {
+      return super.todoCompletedValue(todo, completed);
+    } finally {
+      _$_TodoControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  dynamic delete(TodoModel todo) {
+    final _$actionInfo = _$_TodoControllerBaseActionController.startAction(
+        name: '_TodoControllerBase.delete');
+    try {
+      return super.delete(todo);
     } finally {
       _$_TodoControllerBaseActionController.endAction(_$actionInfo);
     }

@@ -23,7 +23,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          var todo = await Modular.to.pushNamed(TodoRoutes.register) as String;
+          var todo = await Modular.to.pushNamed(TodoRoutes.todo) as String;
           if (todo != null) controller.addTodo(todo);
         },
         child: Icon(Icons.add),

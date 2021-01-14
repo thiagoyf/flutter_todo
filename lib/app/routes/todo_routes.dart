@@ -1,5 +1,4 @@
 class TodoRoutes {
-
-  static const register = "/register";
-
+  static const todo = "/todo";
+  static const todo_create = "/create";
 }

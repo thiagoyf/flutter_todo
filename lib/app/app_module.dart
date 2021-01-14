@@ -1,3 +1,4 @@
+import 'package:todo/app/modules/todo/create/todo_create_module.dart';
 import 'package:todo/app/modules/todo/todo_module.dart';
 import 'package:todo/app/routes/todo_routes.dart';
 
@@ -9,14 +10,14 @@ import 'package:todo/app/modules/home/home_module.dart';
 
 class AppModule extends MainModule {
   @override
-  List<Bind> get binds => [
-        $AppController
-      ];
+  List<Bind> get binds => [$AppController];
 
   @override
   List<ModularRouter> get routers => [
         ModularRouter(Modular.initialRoute, module: HomeModule()),
-        ModularRouter(TodoRoutes.register, module: TodoModule()),
+        ModularRouter(TodoRoutes.todo, module: TodoModule()),
+        ModularRouter("${TodoRoutes.todo}${TodoRoutes.todo_create}",
+            module: TodoCreateModule()),
       ];
 
   @override

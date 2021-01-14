@@ -22,7 +22,13 @@ abstract class _TodoControllerBase with Store {
   }
 
   @action
-  save(TodoModel todo) {
+  todoCompletedValue(TodoModel todo, bool completed) {
+    todo.completed = completed;
     _repository.save(todo);
+  }
+
+  @action
+  delete(TodoModel todo) {
+    _repository.delete(todo);
   }
 }
